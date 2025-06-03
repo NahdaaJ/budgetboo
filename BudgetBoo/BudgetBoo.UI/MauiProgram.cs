@@ -11,9 +11,9 @@ public static class MauiProgram
 			.UseMauiApp<App>()
 			.ConfigureFonts(fonts =>
 			{
-				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
-				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-			});
+				fonts.AddFont("RobotoMono-Bold.ttf", "RobotoMonoBold");
+				fonts.AddFont("RobotoMono-Regular.ttf", "RobotoMonoRegular");
+            });
 
         string dbPath = Path.Combine(FileSystem.AppDataDirectory, "BudgetBoo.db");
         builder.Services.AddSingleton(_ => dbPath);

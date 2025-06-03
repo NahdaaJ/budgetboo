@@ -6,9 +6,13 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
-                <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
+                <ResourceDictionary Source="Resources/Styles/Colours.xaml" />
+                <ResourceDictionary Source="Resources/Styles/Font.xaml" />
+                <ResourceDictionary Source="/Resources/Styles/MainLayoutStyles.xaml" />
             </ResourceDictionary.MergedDictionaries>
+            <Style TargetType="ContentPage">
+                <Setter Property="Background" Value="{StaticResource BlackBrush}" />
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

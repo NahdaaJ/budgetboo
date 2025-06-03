@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xaml-comp compile="true" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <Color x:Key="White">#FFFFFF</Color>
+    <Color x:Key="LightGrey">#4C4444</Color>
+    <Color x:Key="MidGrey">#373131</Color>
+    <Color x:Key="DarkGrey">#2A2727</Color>
+    <Color x:Key="Black">#1F1C1B</Color>
+    
+    <!--Category Colours-->
+    <Color x:Key="Rose">#BC5A5A</Color>
+    <Color x:Key="Clay">#BC795A</Color>
+    <Color x:Key="Gold">#BC9A5A</Color>
+    <Color x:Key="Lemon">#BCBA5A</Color>
+    <Color x:Key="Olive">#7BBC5A</Color>
+    <Color x:Key="Mint">#5ABC8E</Color>
+    <Color x:Key="Teal">#5AB4BC</Color>
+    <Color x:Key="Sky">#5A90BC</Color>
+    <Color x:Key="Indigo">#605ABC</Color>
+    <Color x:Key="Violet">#765ABC</Color>
+    <Color x:Key="Plum">#9D5ABC</Color>
+    <Color x:Key="Magenta">#BC5AB7</Color>
+    <Color x:Key="Fuchsia">#BC5A8B</Color>
+    <Color x:Key="Coral">#BC5A6C</Color>
+
+    <!-- Brushes for each color -->
+    <SolidColorBrush x:Key="WhiteBrush" Color="{StaticResource White}" />
+    <SolidColorBrush x:Key="LightGreyBrush" Color="{StaticResource LightGrey}" />
+    <SolidColorBrush x:Key="MidGreyBrush" Color="{StaticResource MidGrey}" />
+    <SolidColorBrush x:Key="DarkGreyBrush" Color="{StaticResource DarkGrey}" />
+    <SolidColorBrush x:Key="BlackBrush" Color="{StaticResource Black}" />
+
+    <SolidColorBrush x:Key="RoseBrush" Color="{StaticResource Rose}" />
+    <SolidColorBrush x:Key="ClayBrush" Color="{StaticResource Clay}" />
+    <SolidColorBrush x:Key="GoldBrush" Color="{StaticResource Gold}" />
+    <SolidColorBrush x:Key="LemonBrush" Color="{StaticResource Lemon}" />
+    <SolidColorBrush x:Key="OliveBrush" Color="{StaticResource Olive}" />
+    <SolidColorBrush x:Key="MintBrush" Color="{StaticResource Mint}" />
+    <SolidColorBrush x:Key="TealBrush" Color="{StaticResource Teal}" />
+    <SolidColorBrush x:Key="SkyBrush" Color="{StaticResource Sky}" />
+    <SolidColorBrush x:Key="IndigoBrush" Color="{StaticResource Indigo}" />
+    <SolidColorBrush x:Key="VioletBrush" Color="{StaticResource Violet}" />
+    <SolidColorBrush x:Key="PlumBrush" Color="{StaticResource Plum}" />
+    <SolidColorBrush x:Key="MagentaBrush" Color="{StaticResource Magenta}" />
+    <SolidColorBrush x:Key="FuchsiaBrush" Color="{StaticResource Fuchsia}" />
+    <SolidColorBrush x:Key="CoralBrush" Color="{StaticResource Coral}" />
+
+</ResourceDictionary>

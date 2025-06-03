@@ -6,10 +6,4 @@
     xmlns:local="clr-namespace:BudgetBoo.UI"
     Shell.FlyoutBehavior="Disabled"
     Title="BudgetBoo.UI">
-
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
-
 </Shell>

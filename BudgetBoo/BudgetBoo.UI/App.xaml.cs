@@ -10,7 +10,7 @@ namespace BudgetBoo.UI
             InitializeComponent();
             InitialiseDb(serviceProvider);
 
-            MainPage = new AppShell();
+            MainPage = new MainLayout();
         }
 
         private async void InitialiseDb(IServiceProvider services)

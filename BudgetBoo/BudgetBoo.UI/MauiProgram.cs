@@ -15,8 +15,13 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
 
+        string dbPath = Path.Combine(FileSystem.AppDataDirectory, "BudgetBoo.db");
+        builder.Services.AddSingleton(_ => dbPath);
+
+        builder.Services.AddSingleton<App>();
+
 #if DEBUG
-		builder.Logging.AddDebug();
+        builder.Logging.AddDebug();
 #endif
 
 		return builder.Build();

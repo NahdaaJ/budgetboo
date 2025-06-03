@@ -67,13 +67,15 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="ContentPages\TransactionPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="MainLayout.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="ContentPages\" />
 	  <Folder Include="Resources\Splash\" />
 	</ItemGroup>
 

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BudgetBoo.UI.ContentPages.TransactionPage">
+    <VerticalStackLayout>
+        <Grid x:Name="SearchBarContainer" Style="{StaticResource SearchBarStyles}">
+            <Entry Placeholder="search transaction" 
+                   Style="{StaticResource SearchEntryStyles}"/>
+            <Picker Style="{StaticResource SearchPickerStyles}">
+                <Picker.Items>
+                    <x:String>all time</x:String>
+                    <x:String>last 24 hours</x:String>
+                    <x:String>last 7 days</x:String>
+                    <x:String>last 30 days</x:String>
+                    <x:String>last 6 months</x:String>
+                    <x:String>last 12 months</x:String>
+                </Picker.Items>
+            </Picker>
+            <Button Text="search" Style="{StaticResource SearchButtonStyles}"/>
+        </Grid>
+
+        <FlexLayout x:Name="TransactionTableContainer">
+            <FlexLayout x:Name="TransactionTableHeader">
+                <Label Text="Title"/>
+                <Label Text="Amount"/>
+                <Label Text="Date"/>
+            </FlexLayout>
+            <ScrollView x:Name="TransactionTableContent">
+                <VerticalStackLayout>
+                    <HorizontalStackLayout>
+                        <Label Text="mcdonalds" />
+                        <Label Text="£13.65" />
+                        <Label Text="01/02/96" />
+                        <Label Text="Food and Drink" />
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout>
+                        <Label Text="tesco" />
+                        <Label Text="£5.00" />
+                        <Label Text="02/02/96" />
+                        <Label Text="Groceries" />
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </ScrollView>
+            <FlexLayout x:Name="AddTransactionContainer">
+                <Entry Placeholder="Hello"/>
+                <SearchBar Placeholder="Search"/>
+                <DatePicker  />
+                <Picker/>
+            </FlexLayout>
+        </FlexLayout>
+    </VerticalStackLayout>
+</ContentView>

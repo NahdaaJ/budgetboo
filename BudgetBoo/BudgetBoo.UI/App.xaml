@@ -9,6 +9,7 @@
                 <ResourceDictionary Source="Resources/Styles/Colours.xaml" />
                 <ResourceDictionary Source="Resources/Styles/Font.xaml" />
                 <ResourceDictionary Source="/Resources/Styles/MainLayoutStyles.xaml" />
+                <ResourceDictionary Source="/Resources/Styles/TransactionPageStyles.xaml" />
             </ResourceDictionary.MergedDictionaries>
             <Style TargetType="ContentPage">
                 <Setter Property="Background" Value="{StaticResource BlackBrush}" />

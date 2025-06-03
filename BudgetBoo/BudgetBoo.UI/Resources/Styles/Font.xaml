@@ -5,7 +5,7 @@
 
     <!-- Font Sizes -->
     <x:Double x:Key="NormalText">12</x:Double>
-    <x:Double x:Key="ButtonText">12</x:Double>
+    <x:Double x:Key="ButtonText">14</x:Double>
     
     
 

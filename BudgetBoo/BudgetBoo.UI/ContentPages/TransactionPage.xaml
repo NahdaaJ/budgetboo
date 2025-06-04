@@ -2,11 +2,25 @@
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BudgetBoo.UI.ContentPages.TransactionPage">
-    <VerticalStackLayout>
+    <Grid Style="{StaticResource TransactionPageContainerStyles}">
         <Grid x:Name="SearchBarContainer" Style="{StaticResource SearchBarStyles}">
             <Entry Placeholder="search transaction" 
                    Style="{StaticResource SearchEntryStyles}"/>
-            <Picker Style="{StaticResource SearchPickerStyles}">
+            <Picker Style="{StaticResource SearchPickerStyles}" 
+                    Grid.Column="1"
+                    SelectedIndex="0">
+                <Picker.Items>
+                    <x:String>all categories</x:String>
+                    <x:String>housing</x:String>
+                    <x:String>transporation</x:String>
+                    <x:String>food and drink</x:String>
+                    <x:String>personal care</x:String>
+                    <x:String>health and fitness</x:String>
+                </Picker.Items>
+            </Picker>
+            <Picker Style="{StaticResource SearchPickerStyles}" 
+                    Grid.Column="2"
+                    SelectedIndex="0">
                 <Picker.Items>
                     <x:String>all time</x:String>
                     <x:String>last 24 hours</x:String>
@@ -19,34 +33,64 @@
             <Button Text="search" Style="{StaticResource SearchButtonStyles}"/>
         </Grid>
 
-        <FlexLayout x:Name="TransactionTableContainer">
-            <FlexLayout x:Name="TransactionTableHeader">
-                <Label Text="Title"/>
-                <Label Text="Amount"/>
-                <Label Text="Date"/>
-            </FlexLayout>
-            <ScrollView x:Name="TransactionTableContent">
-                <VerticalStackLayout>
-                    <HorizontalStackLayout>
-                        <Label Text="mcdonalds" />
-                        <Label Text="£13.65" />
-                        <Label Text="01/02/96" />
-                        <Label Text="Food and Drink" />
-                    </HorizontalStackLayout>
-                    <HorizontalStackLayout>
-                        <Label Text="tesco" />
-                        <Label Text="£5.00" />
-                        <Label Text="02/02/96" />
-                        <Label Text="Groceries" />
-                    </HorizontalStackLayout>
-                </VerticalStackLayout>
-            </ScrollView>
-            <FlexLayout x:Name="AddTransactionContainer">
-                <Entry Placeholder="Hello"/>
-                <SearchBar Placeholder="Search"/>
-                <DatePicker  />
-                <Picker/>
-            </FlexLayout>
-        </FlexLayout>
-    </VerticalStackLayout>
+        <Grid x:Name="TransactionTableContainer" Style="{StaticResource TransactionTableStyles}">
+            <Grid x:Name="TransactionTableHeader" Style="{StaticResource TransactionHeaderStyles}">
+                <Label Text=" ▼ Title" Grid.Column="0" Style="{StaticResource TransactionHeaderTextStyles}"/>
+                <Label Text=" ▼ Amount" Grid.Column="1" Style="{StaticResource TransactionHeaderTextStyles}"/>
+                <Label Text=" ▼ Date" Grid.Column="2" Style="{StaticResource TransactionHeaderTextStyles}"/>
+            </Grid>
+            <Grid Style="{StaticResource TransactionContentStyles}">
+                <CollectionView ItemsSource="{Binding Transactions}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Style="{StaticResource DataRowStyles}">
+                                <!-- row separator -->
+
+                                <Label Grid.Column="0" Text="{Binding Title}" Style="{StaticResource TransactionDataTitleStyle}" />
+                                <Label Grid.Column="1" Text="{Binding Amount}" Style="{StaticResource NumericDataStyle}" />
+                                <Label Grid.Column="2" Text="{Binding Date, StringFormat='{0:dd/MM/yyyy}'}" Style="{StaticResource DataRowTextStyle}" />
+
+                                <!-- Colored pill -->
+                                <Frame Style="{StaticResource CategoryPill}" BackgroundColor="{Binding CategoryDisplayColour}">
+                                    <Label Text="{Binding CategoryDisplay}" Style="{StaticResource CategoryLabel}"/>
+                                </Frame>
+
+                                <!-- Delete icon -->
+                                <Button
+                                 Style="{StaticResource RowDeleteButton}"
+                                 ImageSource="trash24.png"/>
+
+                                <BoxView Grid.ColumnSpan="5"
+                                 HeightRequest="1"
+                                 VerticalOptions="End"
+                                 BackgroundColor="{StaticResource LightGrey}" />
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Grid>
+            <Grid x:Name="AddTransactionContainer" Style="{StaticResource AddTransactionStyles}">
+                <Entry Placeholder="Title"  Grid.Column="0" Style="{StaticResource GeneralEntryStyles}"/>
+                <Entry Keyboard="Numeric" Placeholder="Amount"  Grid.Column="1" Style="{StaticResource GeneralEntryStyles}"/>
+                <DatePicker   Grid.Column="2" 
+                              Style="{StaticResource GeneralPickerStyles}"
+                              HeightRequest="35"/>
+                <Picker  Grid.Column="3" 
+                         Style="{StaticResource GeneralPickerStyles}"
+                         SelectedIndex="0">
+                    <Picker.Items>
+                        <x:String>housing</x:String>
+                        <x:String>transporation</x:String>
+                        <x:String>food and drink</x:String>
+                        <x:String>personal care</x:String>
+                        <x:String>health and fitness</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Button  Grid.Column="4" 
+                         Text="add" 
+                         Style="{StaticResource GeneralButtonStyles}"
+                         HeightRequest="30"/>
+            </Grid>
+        </Grid>
+    </Grid>
 </ContentView>
